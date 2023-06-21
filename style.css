@@ -1,0 +1,11 @@
+.big_container{
+    display: flex;
+}
+
+.container{
+    width: calc(100% / 5);
+}
+
+.container img{
+    width: 50%;
+}
