@@ -13,7 +13,6 @@ $spazzola = new Prodotto ('spazzola', 'https://m.media-amazon.com/images/I/81yGl
 
 $prodotti = [$collare, $lettiera, $croccantini, $osso, $spazzola];
 
-$prodotti[0]->setIndirizzo('', '(Napoli)');
 $prodotti[1]->setIndirizzo('via lucana', '(Matera)');
 $prodotti[2]->setIndirizzo('via dante', '(Roma)');
 $prodotti[3]->setIndirizzo('via caduti', '(Milano)');
