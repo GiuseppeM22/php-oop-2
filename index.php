@@ -13,7 +13,7 @@ $spazzola = new Prodotto ('spazzola', 'https://m.media-amazon.com/images/I/81yGl
 
 $prodotti = [$collare, $lettiera, $croccantini, $osso, $spazzola];
 
-$prodotti[0]->setIndirizzo('via dante', '(Napoli)');
+$prodotti[0]->setIndirizzo('', '(Napoli)');
 $prodotti[1]->setIndirizzo('via lucana', '(Matera)');
 $prodotti[2]->setIndirizzo('via dante', '(Roma)');
 $prodotti[3]->setIndirizzo('via caduti', '(Milano)');
@@ -46,7 +46,13 @@ $prodotti[4]->setIndirizzo('via Libertà', '(Torino)');
                     <?php foreach($prodotto->categorie as $categoria){ ?>
                         <li><?php echo $categoria ?></li>
                         <?php }?> 
-                        <h2>Prodotto presente nello store di:<?= $prodotto->getIndirizzo() ?></h2>
+                        <h2>Prodotto presente nello store di:<?php
+                        try {
+                           echo $prodotto->getIndirizzo();
+                        } catch (Exception $e) {
+                            echo "via non disponibile: " . $e->getMessage();
+                        };
+                         ?></h2>
                 </div>
                 <?php } ?>
     </div>

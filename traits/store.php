@@ -9,6 +9,10 @@ trait Store{
 
 	public function setIndirizzo($via, $citta) {
 		$this->indirizzo = "$via $citta";
+        if($via == '' || $citta == ''){
+            throw new Exception ("La via non è impostata");
+        }
+
 	}
 }
 
