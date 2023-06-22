@@ -30,6 +30,9 @@ $prodotti = [$collare, $lettiera, $croccantini, $osso, $spazzola];
                     <h1><?php echo $prodotto->nome?></h1>
                     <img src="<?= $prodotto->immagine ?>" alt="">
                     <h2>prezzo: <?php echo $prodotto->prezzo . ' €' ?></h2>
+                    <?php if($prodotto instanceof Cibo){ ?>
+                    <h2>scadenza: <?php echo $prodotto->scadenza . ' €' ?></h2>
+                    <?php } ?>
                     <h2>categoria:</h2>
                     <?php foreach($prodotto->categorie as $categoria){ ?>
                         <li><?php echo $categoria ?></li>
